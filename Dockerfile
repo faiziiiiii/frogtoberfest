@@ -1,4 +1,5 @@
-FROM node:8-alpine
+
+FROM node:10.13.0-alpine
 
 WORKDIR /app
 
@@ -10,7 +11,7 @@ USER octocat
 COPY --chown=octocat:octocat package.json /app
 
 # The latest offical nodejs image already includes yarn.
-RUN yarn install --production --pure-lockfile
+RUN yarn 
 
 COPY --chown=octocat:octocat . /app
 
